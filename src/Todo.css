@@ -1,0 +1,29 @@
+.todo {
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 5px 5px 5px #eee;
+    display: flex;
+    justify-content: space-around;
+}
+
+.task-name {
+    display: block;
+    width: 70%;
+    margin: auto 0;
+}
+
+form.task-name input {
+    width: 100%;
+}
+
+.edit, .delete {
+    display: block;
+    cursor: default;
+    margin: 1px;
+    padding: 5px;
+}
+
+.edit:hover, .delete:hover {
+    margin: 0;
+    border: 1px dashed black;
+}
