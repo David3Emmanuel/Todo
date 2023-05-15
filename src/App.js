@@ -48,7 +48,6 @@ export default function App() {
 
   function handleEdit(id, task) {
     const taskRef = ref(database, "tasks/" + id)
-    console.log(taskRef)
     update(taskRef, { "task": task })
   }
 
@@ -57,6 +56,7 @@ export default function App() {
     <form onSubmit={handleSubmit}>
       <input value={newTask} placeholder="New task..." onChange={e => setNewTask(e.target.value)} />
     </form>
+    <p><span style={{fontSize: "1rem", padding: "0 0.5rem"}} className="material-icons">info</span>Click on task to edit</p>
     {tasks === null && <p className="info">Loading...</p>}
     {tasks && tasks.length === 0 && <p className="info">No pending tasks.</p>}
     {tasks !== null && <div className="tasks">{tasks.map(task =>
