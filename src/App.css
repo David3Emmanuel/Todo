@@ -11,6 +11,9 @@ form input {
 
 .app {
   max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .info {
@@ -18,4 +21,19 @@ form input {
   margin: 5rem auto;
   text-align: center;
   font-size: 2rem;
+}
+
+.tasks {
+  flex: 1;
+  overflow-y: auto;
+}
+
+footer {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+}
+
+footer > * {
+  margin: auto 0.5rem;
 }

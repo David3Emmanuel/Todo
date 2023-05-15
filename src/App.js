@@ -42,14 +42,14 @@ export default function App() {
   }
 
   function handleDelete(id) {
-    const taskRef = ref(database, "tasks/"+id)
+    const taskRef = ref(database, "tasks/" + id)
     remove(taskRef)
   }
 
   function handleEdit(id, task) {
-    const taskRef = ref(database, "tasks/"+id)
+    const taskRef = ref(database, "tasks/" + id)
     console.log(taskRef)
-    update(taskRef, {"task": task})
+    update(taskRef, { "task": task })
   }
 
   return <div className="app">
@@ -59,6 +59,14 @@ export default function App() {
     </form>
     {tasks === null && <p className="info">Loading...</p>}
     {tasks && tasks.length === 0 && <p className="info">No pending tasks.</p>}
-    {tasks !== null && tasks.map(task => <Todo key={task.id} task={task} onEdit={handleEdit} onDelete={handleDelete} />)}
+    {tasks !== null && <div className="tasks">{tasks.map(task =>
+      <Todo key={task.id} task={task} onEdit={handleEdit} onDelete={handleDelete} />
+    )}</div>}
+    <footer>
+      <p>Made by David3Emmanuel</p>
+      <a id="github" href="https://www.github.com/david3emmanuel">
+        <img src="/github.ico" alt="Github" />
+      </a>
+    </footer>
   </div>
 }
